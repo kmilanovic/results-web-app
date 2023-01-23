@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MainComponent} from "./core/main/main.component";
-import {LeagueComponent} from "./features/league/league.component";
+import {MainComponent} from "./core/components/main/main.component";
+import {LeagueComponent} from "./features/components/league/league.component";
 
 const routes: Routes = [
   { path: '', component: MainComponent },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FootballDataService } from "../../services/football-data.service";
-import { Competition } from "../../models/competition.model";
+import { MainService } from "../../services/main.service";
+import { Competition } from "../../../models/competition.model";
 
 const liga1 = "BRA";
 const liga2 = "CHA";
@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
   public competitions!: Competition[];
   public dataFix: string = "";
   constructor(
-    private footballDataService: FootballDataService
+    private footballDataService: MainService
   ) { }
 
   ngOnInit(): void {
