@@ -1,0 +1,88 @@
+mat-sidenav {
+  margin: 16px;
+  width: 250px;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: left;
+  height: max-content;
+  max-height: calc(100vh - 98px);
+}
+
+.content {
+  height: calc(100vh - 98px);
+  margin: 16px 16px 16px 32px;
+  padding: 0px 32px 0px 32px;
+  justify-content: center;
+  align-items: center;
+  color: lightgray;
+  border-radius: 10px;
+  background: #1e1e1e;
+}
+
+mat-sidenav-container {
+  background: black;
+}
+
+
+mat-expansion-panel {
+  background: #1e1e1e;
+  color: white;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0 !important;
+}
+
+::ng-deep .mat-list-item :hover {
+  background-color: #e72640 !important;
+
+}
+
+mat-panel-title {
+  color: white;
+}
+
+mat-list-item {
+  height: 30px;
+  img {
+    height: max-content;
+    width: 30px;
+    background-color: white;
+  }
+  .competition-name {
+    color: lightgray;
+    font-size: 14px;
+  }
+  align-content: center;
+}
+
+/* active tab */
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label {
+  color:white;
+}
+
+/* ink bar */
+::ng-deep .mat-ink-bar {
+  background-color: #e72640 !important;
+}
+
+.mat-sidenav::-webkit-scrollbar {
+  width: 7px;
+}
+
+.mat-sidenav::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.mat-sidenav::-webkit-scrollbar-thumb {
+  background: #e72640;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.mat-sidenav::-webkit-scrollbar-thumb:hover {
+  background: #a0393a;
+}
+

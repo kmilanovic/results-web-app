@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiKey: "51a009505a2044468a8a03e1c66456f7",
+  url:  "https://api.football-data.org/v2"
 };
 
 /*

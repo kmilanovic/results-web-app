@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened class="mat-sidenav" [disableClose]="true">
+    <mat-expansion-panel class="specific-class">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Leagues
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-list class="matlist">
+        <mat-list-item *ngFor="let competition of competitions"  (click)="onCompetitionNameClick(competition.code)">
+          <img class="emblemUrl" [src]="competition.emblemUrl" matListIcon>
+          <div matLine class="competition-name">{{ competition.name }}</div>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z4">
+      <mat-tab-group>
+        <mat-tab label="Fixtures">
+          <app-fixtures [sTx]="dataFix"></app-fixtures>
+        </mat-tab>
+        <mat-tab label="Table">Table</mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
