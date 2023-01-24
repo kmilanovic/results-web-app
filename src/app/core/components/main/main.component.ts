@@ -31,7 +31,7 @@ export class MainComponent implements OnInit {
   public onCompetitionNameClick(code: string): void {
     if(code === "BSA") {
       this.dataFix = liga1;
-    } else this.dataFix = liga2;
+    } else if(code === "ELC") this.dataFix = liga2;
     console.log(code);
     // this.imeServise.imemetode(code).subscribe((response) => {
     //   this.dataTable = respose.tableDate;
