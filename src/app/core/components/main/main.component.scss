@@ -58,6 +58,10 @@ mat-list-item {
   align-content: center;
 }
 
+mat-tab {
+  height: calc(100vh - 90px);
+}
+
 /* active tab */
 ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label {
   color:white;

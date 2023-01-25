@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MainComponent} from "./core/components/main/main.component";
-import {LeagueComponent} from "./features/components/league/league.component";
+import {TableComponent} from "./features/components/table/table.component";
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: ':competitionName', component: LeagueComponent},
+  { path: ':league/:id', component: TableComponent},
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { HttpParams } from "@angular/common/http";
 import { environment } from "../../../environments/environment";
 
@@ -9,17 +9,25 @@ import { environment } from "../../../environments/environment";
 export class MainService {
   private rootUrl = environment.url;
   private apiKey = environment.apiKey;
+
+  private params = new HttpParams().set('plan', 'TIER_ONE');
+  private headers = new HttpHeaders().set('X-Auth-Token', this.apiKey);
+
   constructor(
     private http: HttpClient
   ) { }
 
-  getCompetitions(){
-    const params = new HttpParams()
-      .set('plan', 'TIER_ONE')
+  leagueId!: number;
+
+  getCompetitions() {
     return this.http.get(`${this.rootUrl}/competitions/`,
-      {
-        headers: {"X-Auth-Token": this.apiKey},
-        params
-      })
+        {'headers': this.headers,
+        'params': this.params})
+  }
+
+  getStandings() {
+    return this.http.get(`${this.rootUrl}/competitions/PL/standings?standingType=TOTAL`,
+      {'headers': this.headers,
+        'params': this.params})
   }
 }

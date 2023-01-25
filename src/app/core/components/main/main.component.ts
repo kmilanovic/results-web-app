@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from "../../services/main.service";
 import { Competition } from "../../../models/competition.model";
+import {Table} from "../../../models/table.model";
 
 const liga1 = "BRA";
 const liga2 = "CHA";
@@ -11,7 +12,8 @@ const liga2 = "CHA";
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public competitions!: Competition[];
+
+  competitions: Competition[] = [];
   public dataFix: string = "";
   constructor(
     private footballDataService: MainService
@@ -21,10 +23,10 @@ export class MainComponent implements OnInit {
     this.getCompetitions();
   }
 
-  public getCompetitions(): void {
-    this.footballDataService.getCompetitions().subscribe(data => {
+  getCompetitions(): void {
+    this.footballDataService.getCompetitions().subscribe(res => {
       // @ts-ignore
-      this.competitions = data["competitions"];
+      this.competitions = res['competitions'];
     })
   }
 
